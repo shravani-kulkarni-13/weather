@@ -39,26 +39,26 @@ const Weather = () => {
     const weatherIcons = (icons) => {
         switch(icons) {
             case 'Clear' :  
-                return '/images/clear.png';
+                return '/weather/images/clear.png';
             case 'Clouds' : 
-                return '/images/cloudy.png';
+                return '/weather/images/cloudy.png';
             case 'Rain' : 
-                return '/images/rainy.png';
+                return '/weather/images/rainy.png';
             case 'Snow' : 
-                return '/images/snow.png';
+                return '/weather/images/snow.png';
             case 'Thunderstorm' : 
-                return '/images/storm.png';
+                return '/weather/images/storm.png';
             case 'Mist' : 
             case 'Fog' : 
-                return '/images/fog.png';
+                return '/weather/images/fog.png';
             case 'Haze' : 
-                return '/images/haze.png'
+                return '/weather/images/haze.png'
             default : 
-                return '/images/clear.png';
+                return '/weather/images/clear.png';
         }
     } 
     if(loading === true) {
-        return <img src="/loading.gif" alt="" />
+        return <img src="/weather/loading.gif" alt="" />
     } 
     const dailyForecast = forecasts ? forecasts.list.filter((_,index)=> index % 15 === 0) : "";
   return (
@@ -66,7 +66,7 @@ const Weather = () => {
     <div className="bg-no-repeat bg-cover bg-center bg-black bg-opacity-50 h-screen text-white relative">
     <div className="absolute inset-0">
         <video className="w-full h-full object-cover"
-            src="/images/weatherAnime.mp4"
+            src="/weather/images/weatherAnime.mp4"
             autoPlay
             loop
             muted
