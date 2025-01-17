@@ -37,29 +37,28 @@ const Weather = () => {
             }
     } 
     const weatherIcons = (icons) => {
-        switch(icons) {
-            case 'Clear' :  
-                return '/weather/images/clear.png';
-            case 'Clouds' : 
-                return '/weather/images/cloudy.png';
-            case 'Rain' : 
-                return '/weather/images/rainy.png';
-            case 'Snow' : 
-                return '/weather/images/snow.png';
-            case 'Thunderstorm' : 
-                return '/weather/images/storm.png';
-            case 'Mist' : 
-            case 'Fog' : 
-                return '/weather/images/fog.png';
-            case 'Haze' : 
-                return '/weather/images/haze.png'
-            default : 
-                return '/weather/images/clear.png';
+        if(icons === 'Clear'){
+            return '/weather/images/clear.png';
+        }else if(icons === 'Clouds') {
+            return '/weather/images/cloudy.png';
+        }else if(icons === 'Rain'){
+            return '/weather/images/rainy.png';
+        }else if(icons === 'Snow'){
+            return '/weather/images/snow.png';
+        }else if(icons === 'Thunderstorm') {
+            return '/weather/images/storm.png';
+        }else if(icons === 'Mist' || icons === 'Fog') {
+            return '/weather/images/fog.png';
+        }else if(icons === 'Haze') {
+            return '/weather/images/haze.png'
+        }else {
+            return '/weather/images/clear.png';
         }
-    } 
+    }
     if(loading === true) {
         return <img src="/weather/loading.gif" alt="" />
     } 
+
     const dailyForecast = forecasts ? forecasts.list.filter((_,index)=> index % 15 === 0) : "";
   return (
     <>
